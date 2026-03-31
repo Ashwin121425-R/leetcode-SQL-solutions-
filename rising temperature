@@ -1,0 +1,13 @@
+select today.id from weather yesterday cross join weather today where DATEDIFF(today.recordDate,yesterDay.recordDate)=1 and today.temperature>yesterday.temperature;
+
+step by step explaination:
+
+Since we eed to finnd a day that is hotter than the previous day we will be creating all the possible combbinations of the rows of the same table.
+
+Thus we will be using cartesian product (CROSS product). 
+
+the we will be narrowing it down to the pair of consecutive days(using DATEDIFF),
+
+along with it we will be checking if today's 
+
+temperature is hotter tha yesterday.
